@@ -21,8 +21,14 @@ class View {
   }
   
   bindEvents() {}
-
-  handleClick(e) {}
+  
+  handleClick(e) {
+    const cellsLi = document.querySelectorAll('li');
+    cellsLi.addEventListener('click', handleClick); 
+    playMove(pos);
+    
+  }
+  
 
   makeMove(square) {}
 
