@@ -20,18 +20,23 @@ class View {
     }
   }
   
-  bindEvents() {}
+  bindEvents() {
+    const cellsLi = document.querySelectorAll('li');
+    for (let i = 0; i < cellsLi.length; i++){
+      cellsLi[i].addEventListener("click", this.handleClick)
+    }
+  }
   
   handleClick(e) {
-    const cellsLi = document.querySelectorAll('li');
-    cellsLi.addEventListener('click', handleClick); 
-    playMove(pos);
-    
+    e.preventDefault();
+    this.makeMove(e.target);
   }
   
 
-  makeMove(square) {}
+  makeMove(square) {
+    
+  }
 
 }
-
+// cellsLi.addEventListener('click', handleClick);
 module.exports = View;
